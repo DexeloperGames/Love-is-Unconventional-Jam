@@ -1,0 +1,28 @@
+[gd_scene load_steps=4 format=3 uid="uid://brwedud6fqx7d"]
+
+[ext_resource type="PackedScene" uid="uid://ols6sf0d4usw" path="res://map_level.tscn" id="1_wwxxd"]
+[ext_resource type="PackedScene" uid="uid://dhp8htwfc8w80" path="res://snapper_camera.tscn" id="3_03ih8"]
+[ext_resource type="PackedScene" uid="uid://kl3ct6tn5fxi" path="res://pixel_player.tscn" id="3_wwxxd"]
+
+[node name="Game Thingy" type="Node2D"]
+
+[node name="Map Level" parent="." instance=ExtResource("1_wwxxd")]
+modulate = Color(0.277528, 0.277528, 0.277528, 1)
+
+[node name="Label" type="Label" parent="."]
+visible = false
+offset_right = 40.0
+offset_bottom = 23.0
+scale = Vector2(0.29, 0.29)
+text = "test"
+
+[node name="Snapper Camera" parent="." node_paths=PackedStringArray("target_node") instance=ExtResource("3_03ih8")]
+target_node = NodePath("../PixelPlayer")
+
+[node name="PixelPlayer" parent="." instance=ExtResource("3_wwxxd")]
+modulate = Color(0, 1, 1, 1)
+collision_layer = 6
+collision_mask = 6
+R = false
+G = true
+B = true

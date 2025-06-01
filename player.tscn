@@ -6,7 +6,7 @@
 size = Vector2(1000, 1000)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_sh265"]
-size = Vector2(1, 1)
+size = Vector2(0.9, 0.9)
 
 [sub_resource type="Shader" id="Shader_4flbx"]
 code = "// NOTE: Shader automatically converted from Godot Engine 4.4.1.stable's CanvasItemMaterial.

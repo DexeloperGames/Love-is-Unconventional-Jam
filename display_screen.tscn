@@ -1,7 +1,6 @@
-[gd_scene load_steps=7 format=3 uid="uid://d1fw2wke1vf6j"]
+[gd_scene load_steps=6 format=3 uid="uid://d1fw2wke1vf6j"]
 
-[ext_resource type="PackedScene" uid="uid://chco42sbwsnoc" path="res://player.tscn" id="1_d107k"]
-[ext_resource type="PackedScene" uid="uid://ols6sf0d4usw" path="res://map_level.tscn" id="2_6nnmr"]
+[ext_resource type="PackedScene" uid="uid://brwedud6fqx7d" path="res://game_thingy.tscn" id="1_nm2uq"]
 [ext_resource type="Shader" uid="uid://bolbq6d0ca4n" path="res://display_screen.gdshader" id="2_nm2uq"]
 
 [sub_resource type="ViewportTexture" id="ViewportTexture_6nnmr"]
@@ -33,18 +32,7 @@ handle_input_locally = false
 size = Vector2i(16, 9)
 render_target_update_mode = 4
 
-[node name="Map Level" parent="SubViewport" instance=ExtResource("2_6nnmr")]
-modulate = Color(0.277528, 0.277528, 0.277528, 1)
-position = Vector2(0, 4)
-
-[node name="player" parent="SubViewport" instance=ExtResource("1_d107k")]
-
-[node name="Label" type="Label" parent="SubViewport"]
-visible = false
-offset_right = 40.0
-offset_bottom = 23.0
-scale = Vector2(0.29, 0.29)
-text = "test"
+[node name="Game Thingy" parent="SubViewport" instance=ExtResource("1_nm2uq")]
 
 [node name="ColorRect" type="ColorRect" parent="."]
 material = SubResource("ShaderMaterial_rjxba")

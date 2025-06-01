@@ -1,0 +1,7 @@
+[gd_scene load_steps=2 format=3 uid="uid://dhp8htwfc8w80"]
+
+[ext_resource type="Script" uid="uid://bxecehpcms6c5" path="res://snapper_camera.gd" id="1_o13q5"]
+
+[node name="Snapper Camera" type="Camera2D"]
+offset = Vector2(8, 4.5)
+script = ExtResource("1_o13q5")
