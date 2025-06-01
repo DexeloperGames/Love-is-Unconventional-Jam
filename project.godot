@@ -1,0 +1,26 @@
+; Engine configuration file.
+; It's best edited using the editor UI and not directly,
+; since the parameters that go here are not all obvious.
+;
+; Format:
+;   [section] ; section goes between []
+;   param=value ; assign values to parameters
+
+config_version=5
+
+[application]
+
+config/name="Love is Unconventional Jam"
+run/main_scene="uid://d1fw2wke1vf6j"
+config/features=PackedStringArray("4.4", "Forward Plus")
+config/icon="res://icon.svg"
+
+[physics]
+
+common/physics_ticks_per_second=4
+jolt_physics_3d/motion_queries/recovery_iterations=6
+2d/default_gravity=1.0
+
+[rendering]
+
+environment/defaults/default_clear_color=Color(0, 0, 0, 1)

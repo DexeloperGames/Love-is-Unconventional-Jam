@@ -1,0 +1,59 @@
+[gd_scene load_steps=7 format=3 uid="uid://d1fw2wke1vf6j"]
+
+[ext_resource type="PackedScene" uid="uid://chco42sbwsnoc" path="res://player.tscn" id="1_d107k"]
+[ext_resource type="PackedScene" uid="uid://ols6sf0d4usw" path="res://map_level.tscn" id="2_6nnmr"]
+[ext_resource type="Shader" uid="uid://bolbq6d0ca4n" path="res://display_screen.gdshader" id="2_nm2uq"]
+
+[sub_resource type="ViewportTexture" id="ViewportTexture_6nnmr"]
+viewport_path = NodePath("SubViewport")
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_rjxba"]
+resource_local_to_scene = true
+shader = ExtResource("2_nm2uq")
+shader_parameter/screen_texture = SubResource("ViewportTexture_6nnmr")
+
+[sub_resource type="Environment" id="Environment_6nnmr"]
+background_mode = 3
+glow_enabled = true
+glow_normalized = true
+glow_intensity = 1.09
+glow_strength = 1.77
+glow_blend_mode = 1
+
+[node name="Control" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="SubViewport" type="SubViewport" parent="."]
+handle_input_locally = false
+size = Vector2i(16, 9)
+render_target_update_mode = 4
+
+[node name="Map Level" parent="SubViewport" instance=ExtResource("2_6nnmr")]
+modulate = Color(0.277528, 0.277528, 0.277528, 1)
+position = Vector2(0, 4)
+
+[node name="player" parent="SubViewport" instance=ExtResource("1_d107k")]
+
+[node name="Label" type="Label" parent="SubViewport"]
+visible = false
+offset_right = 40.0
+offset_bottom = 23.0
+scale = Vector2(0.29, 0.29)
+text = "test"
+
+[node name="ColorRect" type="ColorRect" parent="."]
+material = SubResource("ShaderMaterial_rjxba")
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="."]
+environment = SubResource("Environment_6nnmr")

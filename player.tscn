@@ -1,0 +1,38 @@
+[gd_scene load_steps=7 format=3 uid="uid://chco42sbwsnoc"]
+
+[ext_resource type="Script" uid="uid://bv7t085y7e2yx" path="res://player.gd" id="1_4flbx"]
+
+[sub_resource type="QuadMesh" id="QuadMesh_sh265"]
+size = Vector2(1000, 1000)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_sh265"]
+size = Vector2(1, 1)
+
+[sub_resource type="Shader" id="Shader_4flbx"]
+code = "// NOTE: Shader automatically converted from Godot Engine 4.4.1.stable's CanvasItemMaterial.
+
+shader_type canvas_item;
+render_mode blend_add,unshaded;
+"
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_onrkg"]
+shader = SubResource("Shader_4flbx")
+
+[sub_resource type="QuadMesh" id="QuadMesh_4flbx"]
+
+[node name="player" type="CharacterBody2D"]
+modulate = Color(1, 0, 0, 1)
+script = ExtResource("1_4flbx")
+
+[node name="MeshInstance2D" type="MeshInstance2D" parent="."]
+visible = false
+mesh = SubResource("QuadMesh_sh265")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0.5, 0.5)
+shape = SubResource("RectangleShape2D_sh265")
+
+[node name="MeshInstance2D2" type="MeshInstance2D" parent="."]
+material = SubResource("ShaderMaterial_onrkg")
+position = Vector2(0.5, 0.5)
+mesh = SubResource("QuadMesh_4flbx")
